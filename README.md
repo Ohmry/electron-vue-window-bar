@@ -1,2 +1,15 @@
 # electron-vue-window-bar
-> This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[51d6443](https://github.com/SimulatedGREG/electron-vue/tree/51d64431a324ba812b94e48cd05ddb12f4e58675) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+This is component library, creating window bar of frameless window on electron-vue. you can get easily window bar which is consists of logo, menu, titlebar or window control menu such as minize, maximize, close.
+
+> This project modified from [simulatedgreg/electron-vue](https://github.com/SimulatedGREG/electron-vue)
+
+## Usage
+Install library from [NPM repository](https://www.npmjs.com/package/@ohmry/electron-vue-window-bar)
+```
+npm install @ohmry/electron-vue-window-bar
+```
+
+Import components on component you want to use
+``` javascript
+import WindowBar from '@ohmry/electron-vue-window-bar
+```
