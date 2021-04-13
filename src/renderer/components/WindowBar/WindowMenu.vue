@@ -1,5 +1,5 @@
 <template>
-  <div class="window-menu">
+  <div class="window-menu" v-on:focusout="doFocusout">
     <slot />
   </div>
 </template>

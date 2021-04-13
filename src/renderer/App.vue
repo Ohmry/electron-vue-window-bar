@@ -5,10 +5,15 @@
       icon="vuejs-logo.svg">
       <window-menu>
         <window-menu-item label="File">
-          <window-menu-item label="New" />
+          <window-submenu-item label="New" shortcut="Ctrl+N"/>
+          <window-submenu-item label="Open" shortcut="Ctrl+O"/>
         </window-menu-item>
-        <window-menu-item label="Edit" />
-        <window-menu-item label="View" />
+        <window-menu-item label="Edit">
+          <window-submenu-item label="This is Edit" />
+        </window-menu-item>
+        <window-menu-item label="View">
+          <window-submenu-item label="This is View" />
+        </window-menu-item>
       </window-menu>
     </window-bar>
   </div>
