@@ -17,6 +17,7 @@ export default Vue.component('window-menu-item', {
 
     // If menu has submenu, Adding submenu container too.
     if (this.$slots.default && this.onSelected) {
+    // if (this.$slots.default) {
       children.push(SubmenuContainer(this, this.$slots.default))
     }
 
@@ -60,6 +61,17 @@ export default Vue.component('window-menu-item', {
     onMouseover (newValue) {
       this.style.menu.backgroundColor = newValue ? MENU_BACKGROUND_COLOR_MOUSEOVER : MENU_BACKGROUND_COLOR_PRIMARY
     }
+  },
+  methods: {
+    doMouseover () {
+      return this.$parent.doMouseover(this._uid)
+    },
+    doMouseout () {
+      return this.$parent.doMouseout(this._uid)
+    },
+    doClick () {
+      return this.$parent.doClick(this._uid)
+    }
   }
 })
 
@@ -86,13 +98,13 @@ function MenuItem (component, children) {
       on: {
         click (event) {
           if (component.click) component.click(component._uid)
-          component.$parent.doClick(component._uid)
+          component.doClick()
         },
         mouseover (event) {
-          component.$parent.doMouseover(component._uid)
+          component.doMouseover()
         },
         mouseout (event) {
-          component.$parent.doMouseout(component._uid)
+          component.doMouseout()
         }
       }
     },

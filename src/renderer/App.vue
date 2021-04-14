@@ -5,14 +5,20 @@
       icon="vuejs-logo.svg">
       <window-menu>
         <window-menu-item label="File">
-          <window-submenu-item label="New" shortcut="Ctrl+N"/>
+          <window-submenu-item label="New" shortcut="Ctrl+N" v-bind:click="doNewFile"/>
           <window-submenu-item label="Open" shortcut="Ctrl+O"/>
+          <window-submenu-item label="Recent">
+            <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
+            <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
+            <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
+            <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
+          </window-submenu-item>
         </window-menu-item>
         <window-menu-item label="Edit">
-          <window-submenu-item label="This is Edit" />
+          <!-- <window-submenu-item label="This is Edit" /> -->
         </window-menu-item>
         <window-menu-item label="View">
-          <window-submenu-item label="This is View" />
+          <!-- <window-submenu-item label="This is View" /> -->
         </window-menu-item>
       </window-menu>
     </window-bar>
@@ -26,6 +32,11 @@ export default {
   components: {
     WindowBar,
     WindowMenu
+  },
+  methods: {
+    doNewFile (uid) {
+      console.log('menu uid is ' + uid)
+    }
   }
 };
 </script>

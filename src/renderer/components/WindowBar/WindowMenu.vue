@@ -27,9 +27,12 @@ export default {
       if (!this.onShow) this.onMouseover = ''
     },
     doFocusout (event) {
-      this.onShow = false
-      this.onSelected = ''
-      this.onMouseover = ''
+      // when menu button click, occur focusout event first.
+      setTimeout( () => {
+        this.onShow = false
+        this.onSelected = ''
+        this.onMouseover = ''
+      }, 100)
     }
   }
 }
