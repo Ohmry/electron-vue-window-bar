@@ -1,42 +1,46 @@
+<script>
+/**
+ * [ WindowMenu ]
+ *
+ * Copyright 2021.ohmry. All rights reserved.
+ */
+export default {
+  name: "window-menu",
+  data() {
+    return {
+      onShow: false,
+      onMouseoverUid: "",
+      onSelectedUid: "",
+    };
+  },
+  methods: {
+    doClick(uid) {
+      this.onShow = true;
+      this.onSelected = uid;
+    },
+    doMouseover (uid) {
+      this.onMouseoverUid = uid;
+      if (this.onShow) this.onSelectedUid = uid;
+    },
+    doMouseout() {
+      if (!this.onShow) this.onMouseoverUid = "";
+    },
+    doFocusout() {
+      setTimeout(() => {
+        this.onShow = false;
+        this.onSelected = "";
+        this.onMouseover = "";
+      }, 100);
+    },
+  },
+};
+</script>
+
 <template>
   <div class="window-menu" v-on:focusout="doFocusout">
     <slot />
   </div>
 </template>
-
-<script>
-export default {
-  name: "window-menu",
-  data () {
-    return {
-      onShow: false,
-      onSelected: '',
-      onMouseover: ''
-    }
-  },
-  methods: {
-    doClick (uid) {
-      this.onShow = true
-      this.onSelected = uid
-    },
-    doMouseover (uid) {
-      this.onMouseover = uid
-      if (this.onShow) this.onSelected = uid
-    },
-    doMouseout (uid) {
-      if (!this.onShow) this.onMouseover = ''
-    },
-    doFocusout (event) {
-      // when menu button click, occur focusout event first.
-      setTimeout( () => {
-        this.onShow = false
-        this.onSelected = ''
-        this.onMouseover = ''
-      }, 100)
-    }
-  }
-}
-</script>
 
 <style scoped>
 .window-menu {
