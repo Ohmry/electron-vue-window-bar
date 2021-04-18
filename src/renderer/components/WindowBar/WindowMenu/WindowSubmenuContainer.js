@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import WindowMenuContainerBase from './WindowMenuContainerBase.js'
 
+const CONTAINER_WIDTH = 200
+
 export default Vue.component('window-submenu-container', {
   mixins: [WindowMenuContainerBase],
   render (h) {
@@ -13,7 +15,7 @@ export default Vue.component('window-submenu-container', {
         style: {
           position: this.style.position,
           top: this.style.top,
-          left : this.style.left,
+          left: this.style.left,
           border: this.style.border,
           backgroundColor: this.style.backgroundColor,
           boxShadow: this.style.boxShadow,
@@ -34,20 +36,22 @@ export default Vue.component('window-submenu-container', {
   },
   mounted () {
     let menuLevel = this.getMenuLevel(this)
-    this.style.left = menuLevel == 0 ? '' : (menuLevel * this.style.width)
+    this.style.left = menuLevel == 0 ? '' : menuLevel * CONTAINER_WIDTH + 'px'
+    this.style.margin = menuLevel == 0 ? '0 0 0 -7px' : ''
+    this.style.top = (menuLevel == 0 ? 28 : this.$parent.$el.offsetTop - 5) + 'px'
   },
   data () {
     return {
       onSelectedUid: '',
       style: {
         position: 'absolute',
-        top: '28px',
+        top: '',
         border: '1px solid #e6e6e6',
         backgroundColor: '#f0f0f0',
         boxShadow: '1px 1px 1px #eee',
         padding: '5px 0',
-        width: '200px',
-        margin: '0 0 0 -7px',
+        width: CONTAINER_WIDTH + 'px',
+        margin: '',
         left: ''
       }
     }

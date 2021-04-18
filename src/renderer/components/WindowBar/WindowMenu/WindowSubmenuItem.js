@@ -28,14 +28,16 @@ export default Vue.component('window-submenu-item', {
       children.push(Shortcut(this))
     } else if (this.$slots.default) {
       // Adding Submenu when component has submenu
-      //children.push(this.$slots.default);
       this.style.button.padding = '5px 10px'
       children.push(ExpandArrow(this))
       if (this.onSelected) {
-        this.style.submenuContainer.top = this.$el.offsetTop - 5 + 'px'
-        children.push(this.$ctx('window-submenu-container', {}, this.$slots.default))
+        children.push(
+          this.$ctx('window-submenu-container', {}, this.$slots.default)
+        )
       }
     }
+
+    let timeout = (this.getMenuLevel(this) - 1) * 500
 
     return SubmenuItem(this, children)
   },
@@ -61,16 +63,6 @@ export default Vue.component('window-submenu-item', {
           border: 0,
           fontSize: '12px',
           padding: '5px 25px 5px 10px'
-        },
-        submenuContainer: {
-          position: 'absolute',
-          left: '200px',
-          border: '1px solid #e6e6e6',
-          backgroundColor: '#f0f0f0',
-          boxShadow: '1px 1px 1px #eee',
-          padding: '5px 0',
-          width: '200px',
-          top: 0
         }
       }
     }
@@ -174,24 +166,5 @@ function ExpandArrow (component) {
         ''
       )
     ]
-  )
-}
-
-function SubmenuContainer (component, children) {
-  return component.$ctx(
-    'section',
-    {
-      style: {
-        position: component._data.style.submenuContainer.position,
-        backgroundColor: component._data.style.submenuContainer.backgroundColor,
-        top: component._data.style.submenuContainer.top,
-        left: component._data.style.submenuContainer.left,
-        width: component._data.style.submenuContainer.width,
-        border: component._data.style.submenuContainer.border,
-        boxShadow: component._data.style.submenuContainer.boxShadow,
-        padding: component._data.style.submenuContainer.padding
-      }
-    },
-    children
   )
 }

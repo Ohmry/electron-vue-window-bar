@@ -33,7 +33,6 @@ export default Vue.component('window-menu-item', {
     }
   },
   mounted () {
-
   },
   data () {
     return {
@@ -47,17 +46,6 @@ export default Vue.component('window-menu-item', {
           height: '100%',
           padding: '0 7px',
           webkitAppRegion: 'no-drag'
-        },
-        submenuContainer: {
-          position: 'absolute',
-          top: '28px',
-          left: '0px',
-          border: '1px solid #e6e6e6',
-          backgroundColor: '#f0f0f0',
-          boxShadow: '1px 1px 1px #eee',
-          padding: '5px 0',
-          width: '200px',
-          margin: '0 0 0 -7px'
         }
       }
     }
