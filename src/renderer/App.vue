@@ -13,6 +13,12 @@
             <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
             <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
           </window-submenu-item>
+          <window-submenu-item label="Recent">
+            <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
+            <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
+            <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
+            <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
+          </window-submenu-item>
         </window-menu-item>
         <window-menu-item label="Edit">
           <!-- <window-submenu-item label="This is Edit" /> -->

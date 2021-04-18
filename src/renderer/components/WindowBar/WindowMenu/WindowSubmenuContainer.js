@@ -1,6 +1,8 @@
 import Vue from 'vue'
+import WindowMenuContainerBase from './WindowMenuContainerBase.js'
 
 export default Vue.component('window-submenu-container', {
+  mixins: [WindowMenuContainerBase],
   render (h) {
     return h(
       'section',
@@ -11,6 +13,7 @@ export default Vue.component('window-submenu-container', {
         style: {
           position: this.style.position,
           top: this.style.top,
+          left : this.style.left,
           border: this.style.border,
           backgroundColor: this.style.backgroundColor,
           boxShadow: this.style.boxShadow,
@@ -24,8 +27,14 @@ export default Vue.component('window-submenu-container', {
   },
   create () {
     if (this.$parent.$options.name !== 'window-menu-item') {
-      throw new Error('window-submenu-container can be used only within window-menu-item')
+      throw new Error(
+        'window-submenu-container can be used only within window-menu-item'
+      )
     }
+  },
+  mounted () {
+    let menuLevel = this.getMenuLevel(this)
+    this.style.left = menuLevel == 0 ? '' : (menuLevel * this.style.width)
   },
   data () {
     return {
@@ -38,16 +47,14 @@ export default Vue.component('window-submenu-container', {
         boxShadow: '1px 1px 1px #eee',
         padding: '5px 0',
         width: '200px',
-        margin: '0 0 0 -7px'
+        margin: '0 0 0 -7px',
+        left: ''
       }
     }
   },
-  computed: {
-    
-  },
   methods: {
-    doSelected(uid) {
-      this.onSelectedUid = uid;
+    doSelected (uid) {
+      this.onSelectedUid = uid
     }
   }
 })

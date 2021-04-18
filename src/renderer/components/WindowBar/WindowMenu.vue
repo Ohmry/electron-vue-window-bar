@@ -5,35 +5,35 @@
  * Copyright 2021.ohmry. All rights reserved.
  */
 export default {
-  name: "window-menu",
-  data() {
+  name: 'window-menu',
+  data () {
     return {
       onShow: false,
-      onMouseoverUid: "",
-      onSelectedUid: "",
-    };
+      onMouseoverUid: '',
+      onSelectedUid: ''
+    }
   },
   methods: {
-    doClick(uid) {
-      this.onShow = true;
-      this.onSelected = uid;
+    doClick (uid) {
+      this.onShow = true
+      this.onSelectedUid = uid
     },
     doMouseover (uid) {
-      this.onMouseoverUid = uid;
-      if (this.onShow) this.onSelectedUid = uid;
+      this.onMouseoverUid = uid
+      if (this.onShow) this.onSelectedUid = uid
     },
-    doMouseout() {
-      if (!this.onShow) this.onMouseoverUid = "";
+    doMouseout () {
+      if (!this.onShow) this.onMouseoverUid = ''
     },
-    doFocusout() {
+    doFocusout () {
       setTimeout(() => {
-        this.onShow = false;
-        this.onSelected = "";
-        this.onMouseover = "";
-      }, 100);
-    },
-  },
-};
+        this.onShow = false
+        this.onSelectedUid = ''
+        this.onMouseoverUid = ''
+      }, 100)
+    }
+  }
+}
 </script>
 
 <template>

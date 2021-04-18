@@ -6,11 +6,11 @@
 
 <script>
 export default {
-  name: "window-icon",
-  props: ["path"],
+  name: 'window-icon',
+  props: ['path'],
   computed: {
     iconPath () {
-       return require("/src/renderer/assets/" + this.path)
+      return require('/src/renderer/assets/' + this.path)
     }
   }
 }

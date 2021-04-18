@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import WindowIcon from "./WindowBar/WindowIcon.vue";
-import WindowControl from "./WindowBar/WindowControl.vue";
+import WindowIcon from './WindowBar/WindowIcon.vue'
+import WindowControl from './WindowBar/WindowControl.vue'
 export default {
-  name: "window-bar",
-  props: ["title", "icon"],
+  name: 'window-bar',
+  props: ['title', 'icon'],
   components: { WindowIcon, WindowControl },
   data () {
     return {
@@ -36,8 +36,8 @@ export default {
     doUnmaximize () {
       this.isMaximize = false
     }
-  }  
-};
+  }
+}
 </script>
 
 <style scoped>
