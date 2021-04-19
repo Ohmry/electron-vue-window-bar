@@ -1,3 +1,14 @@
+/**
+ *  WindowMenuContainerBase
+ * 
+ *  It is used to create MenuContainer such as WindowSubmenuContainer.
+ *  and is has common variables and methods to use from each components.
+ * 
+ *  Each components which has container role like 'WindowSubmenuContainer'
+ *  these have to mix in it.
+ * 
+ *  Copyright 2021. ohmry. All rights reserved
+ */
 export default {
   methods: {
     getMenuLevel (component) {

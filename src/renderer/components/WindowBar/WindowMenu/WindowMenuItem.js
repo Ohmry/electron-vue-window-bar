@@ -1,13 +1,22 @@
+/**
+ * WindowMenuItem
+ * 
+ * It is window menu on windowbar such as File, Edit, View.
+ * It should be in the WindowMenu Component, if is not, error occur (ref. created hook in this code)
+ * 
+ *  Copyright 2021. ohmry. All rights reserved
+ */
+
+/** Import Area **/
 import Vue from 'vue'
 import WindowMenuBase from './WindowMenuBase.js'
 import WindowSubmenuContainer from './WindowSubmenuContainer.js'
 
+/** Constants Area **/
 const MENU_BACKGROUND_COLOR_PRIMARY = 'transparent'
 const MENU_BACKGROUND_COLOR_MOUSEOVER = '#eeeeee'
 
-/************************************************
- * Render Process
- ************************************************/
+/** Render Area **/
 export default Vue.component('window-menu-item', {
   props: ['label', 'shortcut', 'click'],
   mixins: [WindowMenuBase],
@@ -87,7 +96,13 @@ export default Vue.component('window-menu-item', {
 })
 
 /**
- * Create MenuItem
+ * Create MenuItem element.
+ * this element is button element and all styles refer to component.data.style.
+ * all event listeners binding method of component.
+ * 
+ * @param {*} component 
+ * @param {*} children 
+ * @returns 
  */
 function MenuItem (component, children) {
   return component.$ctx(

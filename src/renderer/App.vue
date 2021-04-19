@@ -8,7 +8,7 @@
           <window-submenu-item label="New" shortcut="Ctrl+N" v-bind:click="doNewFile"/>
           <window-submenu-item label="Open" shortcut="Ctrl+O"/>
           <window-submenu-item label="Recent">
-            <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
+            <window-submenu-item label="Open recently file" shortcut="Ctrl+R" v-bind:click="doRecentFile"/>
             <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
             <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
             <window-submenu-item label="Open recently file" shortcut="Ctrl+R"/>
@@ -42,6 +42,9 @@ export default {
   methods: {
     doNewFile (uid) {
       console.log('menu uid is ' + uid)
+    },
+    doRecentFile () {
+      console.log('recent File')
     }
   }
 };

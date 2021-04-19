@@ -1,3 +1,14 @@
+/**
+ *  WindowMenuBase
+ * 
+ *  It is used to create MenuItem such as WindowMenuItem, WindowSubmenuItem.
+ *  and is has common variables and methods to use from each components.
+ * 
+ *  Each components which has menu role like 'WindowMenuItem', 'WindowSubmenuItem'.
+ *  these have to mix in it.
+ * 
+ *  Copyright 2021. ohmry. All rights reserved
+ */
 export default {
   methods: {
     getMenuLevel (component) {
