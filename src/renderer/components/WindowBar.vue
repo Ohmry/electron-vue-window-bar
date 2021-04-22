@@ -55,6 +55,7 @@ export default {
   user-select: none;
   border-bottom: 1px solid #eee;
   -webkit-app-region: drag;
+  z-index: 99
 }
 .window-title {
   margin: 0 auto;
