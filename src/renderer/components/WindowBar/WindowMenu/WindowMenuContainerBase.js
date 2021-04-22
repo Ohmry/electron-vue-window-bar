@@ -20,6 +20,9 @@ export default {
         level += component.$parent.getMenuLevel(component.$parent)
       }
       return level
+    },
+    execInterval (millisecond) {
+      return new Promise((func) => setTimeout(func, millisecond))
     }
   }
 }

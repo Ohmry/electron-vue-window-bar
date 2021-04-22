@@ -26,7 +26,10 @@ export default {
   components: { WindowIcon, WindowControl },
   data () {
     return {
-      isMaximize: false
+      isMaximize: false,
+      style: {
+
+      }
     }
   },
   methods: {

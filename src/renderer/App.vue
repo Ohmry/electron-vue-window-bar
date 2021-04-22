@@ -28,6 +28,9 @@
         </window-menu-item>
       </window-menu>
     </window-bar>
+    <section>
+      This is Container
+    </section>
   </div>
 </template>
 

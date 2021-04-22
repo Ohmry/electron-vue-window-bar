@@ -30,14 +30,13 @@ export default Vue.component('window-submenu-item', {
       // Adding Submenu when component has submenu
       this.style.button.padding = '5px 10px'
       children.push(ExpandArrow(this))
-      if (this.onSelected) {
+
+      if (this.onSelected && !this.onContainerLoaded) {
         children.push(
           this.$ctx('window-submenu-container', {}, this.$slots.default)
         )
       }
     }
-
-    let timeout = (this.getMenuLevel(this) - 1) * 500
 
     return SubmenuItem(this, children)
   },
@@ -51,6 +50,7 @@ export default Vue.component('window-submenu-item', {
   data () {
     return {
       onMouseover: false,
+      onContainerLoaded: false,
       style: {
         button: {
           backgroundColor: BUTTON_STYLE_BACKGROUND_COLOR_PRIMARY,
