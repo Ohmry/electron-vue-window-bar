@@ -4,6 +4,7 @@ import WindowControl from './WindowBar/WindowControl.vue'
 import WindowMenu from './WindowBar/WindowMenu.vue'
 import WindowMenuItem from './WindowBar/WindowMenu/WindowMenuItem.js'
 import WindowSubMenuItem from './WindowBar/WindowMenu/WindowSubmenuItem.js'
+import WindowContainer from './WindowContainer.vue'
 
 export default WindowBar
 export {
@@ -12,5 +13,6 @@ export {
   WindowControl,
   WindowMenu,
   WindowMenuItem,
-  WindowSubMenuItem
+  WindowSubMenuItem,
+  WindowContainer
 }

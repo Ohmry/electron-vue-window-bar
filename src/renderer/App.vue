@@ -28,19 +28,28 @@
         </window-menu-item>
       </window-menu>
     </window-bar>
-    <section>
-      This is Container
-    </section>
+    <window-container>
+      This is Container <br/>
+      This is Container <br/>
+      This is Container <br/>
+      This is Container <br/>
+      This is Container <br/>
+      This is Container <br/>
+      This is Container <br/>
+      This is Container <br/>
+      This is Container <br/>
+    </window-container>
   </div>
 </template>
 
 <script>
-import { WindowBar, WindowMenu } from './components/index'
+import { WindowBar, WindowMenu, WindowContainer } from './components/index'
 export default {
   name: "electron-vue-banner",
   components: {
     WindowBar,
-    WindowMenu
+    WindowMenu,
+    WindowContainer
   },
   methods: {
     doNewFile (uid) {
