@@ -18,5 +18,6 @@ export default {
   right: 0;
   bottom: 0;
   overflow: auto;
+  padding: 10px;
 }
 </style>
