@@ -1,8 +1,8 @@
 {
   "name": "@ohmry/electron-vue-window-bar",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Ohmry <o.ohmry@gmail.com>",
-  "description": "WindowBar component used by frameless electron-window",
+  "description": "Provide window-bar element used on frameless window of electron-vue",
   "license": "MIT",
   "main": "./dist/ohmry.common.js",
   "repository": {

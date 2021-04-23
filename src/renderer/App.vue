@@ -45,7 +45,7 @@
 <script>
 import { WindowBar, WindowMenu, WindowContainer } from './components/index'
 export default {
-  name: "electron-vue-banner",
+  name: "electron-vue-window-bar-example",
   components: {
     WindowBar,
     WindowMenu,
